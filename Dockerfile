@@ -1,9 +1,6 @@
-FROM ubuntu:12.10
-MAINTAINER Ken Cochrane "kencochrane@gmail.com"
-RUN apt-get -qq update
-RUN apt-get install -y python-dev python-setuptools supervisor git-core
-RUN easy_install pip
-RUN pip install virtualenv
+FROM rajalokan/pyu1404
+MAINTAINER Alok Kumar <rajalokan@gmail.com>
+RUN apt-get install -y supervisor
 RUN pip install uwsgi
 RUN virtualenv --no-site-packages /opt/ve/djdocker
 ADD . /opt/apps/djdocker
